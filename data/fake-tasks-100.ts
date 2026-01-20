@@ -106,6 +106,7 @@ export const FAKE_TASKS = [
   { id: "99", title: "Implement task epic linking", status: "in_progress" },
   { id: "100", title: "Celebrate 100 tasks milestone 🎉", status: "todo" },
 ];
+
 export const initialState: State = {
   // History Stacks
   past: [],

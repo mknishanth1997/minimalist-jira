@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AppSidebar } from "@/components/npm-sidebar/SideBar";
+import { TaskProvider } from "@/context/TaskContext";
+import { JiraHeader } from "@/components/flowbite-navbar/JiraHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="bg-white dark:bg-gray-950 text-slate-900 dark:text-slate-100">
+        <TaskProvider>
+          {/* This 'flex' is what puts the sidebar and content side-by-side */}
+          <div className="flex h-screen overflow-hidden">
+            {/* 1. SIDEBAR (The code you shared stays here) */}
+            <AppSidebar />
+
+            {/* 2. MAIN AREA (Navbar + Page Content) */}
+            <main className="flex-1 flex flex-col min-w-0">
+              {/* Fixed Header */}
+              <JiraHeader />
+
+              {/* This div is the only part that should scroll */}
+              <div className="flex-1 overflow-y-auto p-6 bg-gray-50 dark:bg-gray-900">
+                {children}
+              </div>
+            </main>
+          </div>
+        </TaskProvider>
       </body>
     </html>
   );
