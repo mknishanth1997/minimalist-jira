@@ -1,6 +1,6 @@
-import { State } from "@/types/types";
+import { State, Task } from "@/types/types";
 
-export const FAKE_TASKS = [
+export const FAKE_TASKS: Task[] = [
   { id: "1", title: "Learn useReducer basics", status: "todo" },
   { id: "2", title: "Build Mini Jira board", status: "in_progress" },
   { id: "3", title: "Ship first side project", status: "done" },
@@ -114,7 +114,7 @@ export const initialState: State = {
   future: [],
 
   // Global Status
-  status: "idle",
+  status: "loading",
 
   // Action Trackers (Precision Loading)
   isAdding: false,

@@ -21,6 +21,8 @@ export function AppSidebar() {
     <div className="h-screen sticky top-0 flex text-slate-900 dark:text-slate-100">
       <Sidebar
         collapsed={collapsed}
+        breakPoint="lg"
+        onBackdropClick={() => setCollapsed(true)}
         backgroundColor="var(--sidebar-bg)"
         rootStyles={{
           borderColor: "rgba(200, 200, 200, 0.2)",

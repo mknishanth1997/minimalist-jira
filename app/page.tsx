@@ -1,11 +1,7 @@
 "use client";
 
-import { JiraHeader } from "@/components/flowbite-navbar/JiraHeader";
+import ProjectBoard from "@/components/ProjectBoard";
 
 export default function Home() {
-  return (
-    <div>
-      <h1 className="border">hi</h1>
-    </div>
-  );
+  return <ProjectBoard></ProjectBoard>;
 }

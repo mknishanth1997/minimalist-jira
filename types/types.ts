@@ -1,8 +1,10 @@
 export type FilterType = "all" | "todo" | "in_progress" | "done";
+export type TaskStatus = "todo" | "in_progress" | "done";
+
 export type Task = {
   id: string;
   title: string;
-  status: "todo" | "in_progress" | "done";
+  status: TaskStatus;
 };
 export type State = {
   // History
