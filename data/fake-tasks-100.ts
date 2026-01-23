@@ -123,5 +123,6 @@ export const initialState: State = {
 
   // UI State
   currentFilter: "all",
+  currentFilterWord: null,
   error: null,
 };

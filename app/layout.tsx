@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppSidebar } from "@/components/npm-sidebar/SideBar";
 import { TaskProvider } from "@/context/TaskContext";
 import { JiraHeader } from "@/components/flowbite-navbar/JiraHeader";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
               {/* This div is the only part that should scroll */}
               <div className="flex-1 overflow-y-auto p-6 bg-gray-50 dark:bg-gray-900">
                 {children}
+                <Toaster position="top-center" />
               </div>
             </main>
           </div>

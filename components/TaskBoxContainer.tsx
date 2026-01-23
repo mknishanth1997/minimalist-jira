@@ -7,7 +7,16 @@ function TaskBoxContainer({ status }) {
 
   const visibleTask = state.tasks
     .filter((t) => t.status === status)
-    .filter((fD) => fD.title.startsWith("hi") || fD.id.startsWith("1"));
+    .filter((t) => {
+      if (!state.currentFilterWord) return true;
+
+      return (
+        t.title
+          .toLowerCase()
+          .startsWith(state.currentFilterWord.toLowerCase()) ||
+        t.id.startsWith(state.currentFilterWord)
+      );
+    });
 
   return (
     <div
@@ -25,7 +34,6 @@ function TaskBoxContainer({ status }) {
       <h2 className="mb-4 font-semibold text-gray-600 dark:text-gray-400 uppercase text-xs tracking-wider">
         {`${status} (${visibleTask.length})`}
       </h2>
-
       <div
         className="
         flex-1

@@ -12,6 +12,7 @@ function ProjectBoard() {
   const { state, dispatch } = useTask();
   useEffect(() => {
     handleFetch(dispatch);
+    console.log("useEffect");
   }, [dispatch]);
 
   return (

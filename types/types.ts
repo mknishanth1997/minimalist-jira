@@ -19,6 +19,7 @@ export type State = {
   isDeleting: string | null;
 
   currentFilter: FilterType;
+  currentFilterWord: string | null;
   error: string | null; // One central place for error messages
 };
 
@@ -36,6 +37,7 @@ export type Action =
   | { type: "DELETE_TASK_SUCCESS"; payload: string }
   | { type: "DELETE_TASK_ERROR"; payload: string }
   | { type: "SET_UI_FILTER"; payload: FilterType }
+  | { type: "SET_CURRENT_UI_Filter"; payload: string }
   | { type: "UNDO" }
   | { type: "REDO" };
 

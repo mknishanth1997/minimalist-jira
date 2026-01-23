@@ -37,7 +37,7 @@ export function reducer(state: State, action: Action): State {
         ...state,
         isAdding: false,
         past: [...state.past, state.tasks],
-        tasks: [...state.tasks, action.payload],
+        tasks: [action.payload, ...state.tasks],
         future: [],
         error: null,
       };
@@ -101,6 +101,12 @@ export function reducer(state: State, action: Action): State {
       return {
         ...state,
         currentFilter: action.payload,
+      };
+    // SET UI Current Filter:
+    case "SET_CURRENT_UI_Filter":
+      return {
+        ...state,
+        currentFilterWord: action.payload,
       };
 
     // Undo and Redo:
