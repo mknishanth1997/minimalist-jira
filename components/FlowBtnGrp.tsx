@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from "flowbite-react";
 
 export function FlowBtnGrp() {
   const { state, dispatch } = useTask();
-  const setCurrentFilter = (f) =>
+  const setCurrentFilter = (f: "all" | "todo" | "in_progress" | "done") =>
     dispatch({ type: "SET_UI_FILTER", payload: f });
   const className = "bg-gray-100 dark:bg-gray-700";
   return (

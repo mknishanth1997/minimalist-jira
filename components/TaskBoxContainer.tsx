@@ -2,7 +2,7 @@ import React from "react";
 import TaskBox from "./TaskBox";
 import { useTask } from "@/context/TaskContext";
 
-function TaskBoxContainer({ status }) {
+function TaskBoxContainer({ status }: { status: string }) {
   const { state } = useTask();
 
   const visibleTask = state.tasks

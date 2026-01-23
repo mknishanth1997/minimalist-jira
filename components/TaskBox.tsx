@@ -16,7 +16,11 @@ import {
 import { NpmToaster } from "./NpmToaster";
 import { useState } from "react";
 
-export default function TaskBox({ task }) {
+export default function TaskBox({
+  task,
+}: {
+  task: { id: string; title: string; status: TaskStatus };
+}) {
   const { state, dispatch } = useTask();
   const [error, setError] = useState(false);
   const status = task.status;
@@ -164,7 +168,7 @@ function getNextStatus(status: TaskStatus) {
   return STATUS_FLOW[index + 1];
 }
 
-function getPrevStatus(status) {
+function getPrevStatus(status: TaskStatus) {
   const index = STATUS_FLOW.indexOf(status);
   if (index <= 0) return status;
   return STATUS_FLOW[index - 1];
