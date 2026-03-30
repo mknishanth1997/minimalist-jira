@@ -34,3 +34,6 @@ git clone https://github.com/your-username/jira-task-board.git
 cd jira-task-board
 npm install
 npm run dev
+
+
+Testing this on windows
